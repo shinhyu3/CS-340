@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8">
+  <title>Insert Values into HOTS database</title>
+ </head>
+ <body>
+ <h1> Add Heroes into HOTS database</h1>
+ 
+  <form id="addHero" action="/addHero" method="post"> 
+	Enter the hero's name:
+	<br>
+	<input type="text" name= "Hero_name">
+	<br></br>
+	
+	Enter the start damage:
+	<br>
+	<input type="number" name= "Start_damage" min="0">
+	<br></br>
+	
+    <label> Select the originating game </label>
+	<br>
+    <select id='game_filter' name="game"> 
+       		{{#each game}}
+        	<option value="{{id}}">{{name}}</option>
+        	{{/each}}
+			<option value="none">NULL</option>		
+    </select>
+	<br></br>
+	
+	Enter the special ability:
+	<br>
+	<input type="text" name= "Special_ability">
+	<br></br>
+
+    	<button name="addHeroBtn" type="submit" value="Submit">Submit</button>
+	</form>
+	<br>
+	
+	<h3>Current Heroes:</h3>
+<table>
+    <thead>
+	<th>ID</th> 
+    <th>Name</th> 
+	<th>Start Damage</th>
+	<th>Game </th>
+    <th>Update Function</th>
+    <th>Delete Function</th>
+		
+    </thead> 
+    <tbody>
+        {{#each addHero}} 
+        <tr> 
+	    <td>{{Hero_id}}</td>
+        <td>{{Hero_name}}</td> 
+	    <td>{{Start_damage}}</td> 
+	    <td>{{Game}}</td> 
+        <td><button onclick="location.href='/addHero/{{Hero_id}}'">Update</a></td>
+        <td><button onclick="deleteHero({{Hero_id}})">Delete</button></td>
+        </tr> 
+        {{/each}} 
+    </tbody> 
+</table> 
+	
+ </body>
+</html>

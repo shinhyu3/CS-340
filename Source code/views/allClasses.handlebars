@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>All Heroes</title>
+  </head>
+  <body>
+      <h1> Add Classes into HOTS database</h1>
+  <form id="allClasses" action="/allClasses" method="post"> 
+	Enter Class name:
+	<br>
+	<input type="text" name= "Class_name">
+	<br></br>
+	
+	<button name="addClassBtn" type="submit" value="Submit">Submit</button>
+	</form>
+      <h3>All Current Classes:</h3>
+        <table>
+          <thread>
+              <th>ID</th>
+              <th>Name</th>
+          </thread>
+          <tbody>
+              {{#each allClasses}}
+              <tr>
+                  <td>{{Class_id}}</td>
+                  <td>{{Class_name}}</td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+  </body>
+</html>

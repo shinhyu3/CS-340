@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Update Hero</title>
+  </head>
+  <body>
+<h1>Update {{person.Hero_name}}:</h1>
+<form id="updateHero" action="/addHero" method="post">
+    Hero name: <input type="text" name="Hero_name" value="{{person.Hero_name}}"><br>
+    Start Damage: <input type="number" name="Start_damage" min="0" value="{{person.Start_damage}}"><br>
+    Game: <select name="Game_id" id="game-Selector"> 
+        {{#each game}}
+        <option value="{{id}}">{{name}}</option>
+        {{/each}}
+		<option value="none">NULL</option>
+    </select><br>
+	Special Ability: <input type="text" name="Ability_name" value="{{person.Special_name}}"><br>
+  </form>
+<button onclick="updateHero({{person.id}})">Update</button>
+<script defer>selectGameID({{person.Game_id}});</script>
+  </body>
+</html>

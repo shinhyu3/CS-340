@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>All Levels</title>
+  </head>
+  <body>
+      <h1> Add Levels into HOTS database</h1>
+  <form id="allLevels" action="/allLevels" method="post"> 
+	Enter Level name:
+	<br>
+	<input type="text" name= "Level_name">
+	<br></br>
+	Enter Objectives for the Level:
+	<br>
+	<input type="text" name= "Objectives">
+	<br></br>
+	
+	<label> Select the originating game </label>
+	<br>
+    <select id='game_filter' name="O_game"> 
+       		{{#each game}}
+        	<option value="{{id}}">{{name}}</option>
+        	{{/each}}
+			
+    </select>
+	<br></br>
+	<button name="addLevelBtn" type="submit" value="Submit">Submit</button>
+	</form>
+      <h3>All Levels:</h3>
+        <table>
+          <thread>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Objectives</th>
+			  <th>Game</th>
+          </thread>
+          <tbody>
+              {{#each allLevels}}
+              <tr>
+                  <td>{{Level_id}}</td>
+                  <td>{{Level_name}}</td>
+                  <td>{{Objectives}}</td>
+				  <td>{{game}}</td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+  </body>
+</html>

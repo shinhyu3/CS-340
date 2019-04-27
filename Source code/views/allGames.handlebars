@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>All Originating Games</title>
+  </head>
+  <body>
+      <h1> Add Originating Games into HOTS database</h1>
+  <form id="allGames" action="/allGames" method="post"> 
+	Enter originating game name:
+	<br>
+	<input type="text" name= "Game_name">
+	<br></br>
+	
+	<button name="addGameBtn" type="submit" value="Submit">Submit</button>
+	</form>
+      <h3>All Originating Games:</h3>
+        <table>
+          <thread>
+              <th>ID</th>
+              <th>Game Name</th>
+			  <th>Delete Function</th>
+          </thread>
+          <tbody>
+              {{#each allGames}}
+              <tr>
+                  <td>{{Game_id}}</td>
+                  <td>{{Game_name}}</td>
+				  <td><button onclick="deleteGame({{Game_id}})">Delete</button></td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+  </body>
+</html>

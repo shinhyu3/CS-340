@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>All Special Abilities</title>
+  </head>
+  <body>
+	
+	</form>
+      <h1>All Special Abilities:</h1>
+        <table>
+          <thread>
+              <th>ID</th>
+              <th>Hero Name</th>
+			  <th>Special Ability</th>
+          </thread>
+          <tbody>
+              {{#each allSpecialAbilities}}
+              <tr>
+                  <td>{{Special_ability_id}}</td>
+				  <td>{{Hero_name}}</td>
+                  <td>{{Special_name}}</td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+  </body>
+</html>

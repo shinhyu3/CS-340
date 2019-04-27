@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Hero Class</title>
+  </head>
+  <body>
+      <h1> Add Hero-Class into HOTS database</h1>
+  <form id="allHeroClass" action="/allHeroClass" method="post"> 
+  
+  Please select a Hero:
+  <br>
+   <select id='Hero_filter' name="Hero_id"> 
+       		{{#each hero}}
+        	<option value="{{H_id}}">{{H_name}}</option>
+        	{{/each}}
+    </select>
+  <br></br>
+
+	
+    Please select a Class:
+	<br>
+	<select id='Class_filter' name="Class_id"> 
+       		{{#each Hclass}}
+        	<option value="{{C_id}}">{{C_name}}</option>
+        	{{/each}}
+	</select>
+	<br></br>
+	<button name="addHeroClassBtn" type="submit" value="Submit">Submit</button>
+	</form>
+      <h3>Hero Class:</h3>
+        <table>
+          <thread>
+            <th>ID</th>
+            <th>Name</th>
+			<th> Class </th>
+			<th>Delete Function</th>
+          </thread>
+          <tbody>
+              {{#each HCresults}}
+              <tr>
+				<td>{{Hero_id}}</td>
+                <td>{{Hero_name}}</td>
+                <td>{{Class_name}}</td>
+				<td><button onclick="deleteHeroClass({{Hero_id}},{{Class_id}})">Delete</button></td>
+              </tr>
+              {{/each}}
+          </tbody>
+        </table>
+  </body>
+</html>
