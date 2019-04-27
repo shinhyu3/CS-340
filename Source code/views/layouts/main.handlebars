@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<title>HOTS page</title>
+	<style>
+	table, th, td {
+	border: 1px solid black;
+    text-align: center;
+    vertical-align: middle;
+}
+    
+</style>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    {{#each jsscripts}}
+    <script src="/static/{{this}}"></script>
+    {{/each}}
+</head>
+<body>
+	{{{body}}}
+     <h2>Site Map</h2>
+ <ul>
+<li><a href="/">Home</a></li>
+  <li><a href="/addHero">Heroes</a></li>
+  <li><a href="/allSpecialAbilities">Special Abilities</a></li>
+  <li><a href="/allLevels">Levels</a></li>
+  <li><a href="/allClasses">Classes</a></li>
+  <li><a href="/allHeroClass">Hero-Class</a></li>
+  <li><a href="/allGames">Originating Games</a></li>
+  <li><a href="/filterByGame">Filter Hero by Game</a></li>
+  </ul>
+</body>
+</html>
